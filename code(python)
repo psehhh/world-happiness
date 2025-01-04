@@ -1,0 +1,12 @@
+import pandas as pd
+df = pd.read_csv('world-happiness-report-2021.csv')
+df
+df = df.drop_duplicates()
+columns_to_drop = [col for col in df.columns if 'Explained by' in col]
+print(f"Columns to drop: {columns_to_drop}")
+df = df.drop(columns=columns_to_drop)
+df.head()
+df=df.fillna('')
+
+  #all this was used to clean the data
+  #as the data was picked from kaggle.com it was pretty much ready to use
